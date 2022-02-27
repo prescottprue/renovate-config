@@ -35,6 +35,7 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["devDependencies"],
+      "matchPaths": ["./package.json", "packages/**/package.json"],
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "squash"
@@ -44,6 +45,7 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
+      "matchPaths": ["./package.json", "packages/**/package.json"],
       "schedule": ["before 8am on Monday"],
       "automerge": true,
       "automergeType": "pr",
