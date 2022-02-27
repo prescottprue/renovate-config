@@ -1,0 +1,43 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":pinOnlyDevDependencies"],
+  "ignorePresets": [":ignoreModulesAndTests"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**"
+  ],
+  "packageRules": [
+    {
+      "description": "Label examples dependencies.",
+      "matchPaths": ["examples/**/package.json"],
+      "labels": ["examples"],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "examples"
+    },
+    {
+      "description": "Auto-merge examples folder non-major npm dependencies weekly on Monday morning",
+      "matchPaths": ["examples/**/package.json"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": ["npm"],
+      "prCreation": "not-pending",
+      "extends": ["schedule:weekly"],
+      "groupName": "Examples non-major",
+      "groupSlug": "examples-non-major",
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Group major examples folder npm dependencies monthly on Monday morning",
+      "matchPaths": ["examples/**/package.json"],
+      "matchUpdateTypes": ["major"],
+      "matchDepTypes": ["npm"],
+      "prCreation": "not-pending",
+      "extends": ["schedule:monthly"],
+      "groupName": "Examples major",
+      "groupSlug": "examples-major"
+    }
+  ]
+}
