@@ -4,6 +4,7 @@
   "ignorePresets": [":prHourlyLimit2"],
   "timezone": "America/Denver",
   "prHourlyLimit": 0,
+  "onboardingCommitMessage": "chore(deps): configure renovate",
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
