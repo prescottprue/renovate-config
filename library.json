@@ -1,6 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":pinOnlyDevDependencies"],
+  "extends": [
+    "github>prescottprue/renovate-config",
+    ":pinOnlyDevDependencies"
+  ],
   "ignorePresets": [":ignoreModulesAndTests"],
   "ignorePaths": [
     "**/node_modules/**",
