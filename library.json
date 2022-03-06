@@ -13,6 +13,36 @@
   ],
   "packageRules": [
     {
+      "description": "Auto-merge non-major npm dev dependencies",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
+      "description": "Weekly npm dependencies maintenance (grouped minor + patch updates)",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "schedule": ["before 8am on Monday"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "commitMessageAction": "",
+      "groupName": "Weekly npm maintenance release",
+      "groupSlug": "weekly-npm-maintenance"
+    },
+    {
+      "description": "Auto-merge non-major Github Actions dependencies",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": ["action"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash"
+    },
+    {
       "description": "Label examples dependencies.",
       "matchPaths": ["examples/**"],
       "labels": ["examples"],
