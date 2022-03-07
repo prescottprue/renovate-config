@@ -13,6 +13,13 @@
   ],
   "packageRules": [
     {
+      "description": "@size-limit monorepo",
+      "matchPackageNames": ["size"],
+      "matchPackagePrefixes": ["@size-limit"],
+      "groupName": "Size Limit Monorepo",
+      "groupSlug": "size-limit-monorepo"
+    },
+    {
       "description": "Auto-merge non-major npm dev dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchDatasources": ["npm"],
