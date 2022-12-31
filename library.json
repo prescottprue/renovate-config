@@ -4,6 +4,8 @@
     "github>prescottprue/renovate-config",
     ":pinOnlyDevDependencies"
   ],
+  "platformAutomerge": true,
+  "platformCommit": true,
   "ignorePresets": [":ignoreModulesAndTests"],
   "ignorePaths": [
     "**/node_modules/**",
